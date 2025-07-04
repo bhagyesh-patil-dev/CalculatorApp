@@ -9,13 +9,13 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:minWidth="200dp"
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
         android:orientation="vertical"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout">
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout">
 
         <TextView
             android:id="@+id/inputText"
@@ -24,7 +24,7 @@
             android:gravity="end"
             android:text="@string/_100"
             android:textColor="@color/white"
-            android:textSize="56sp" />
+            android:textSize="48sp" />
 
         <TextView
             android:id="@+id/outputText"
@@ -33,17 +33,17 @@
             android:gravity="end"
             android:text="@string/_100"
             android:textColor="#A0A0A0"
-            android:textSize="36sp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/buttonAC"
