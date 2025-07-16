@@ -46,6 +46,9 @@ dependencies {
     // Splash Screen Api
     implementation (libs.androidx.core.splashscreen)
 
+    // Maths expression evaluator
+    implementation(libs.exp4j)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
