@@ -149,7 +149,7 @@
             android:id="@+id/button3"
             style="@style/CalculatorButtons"
             android:text="@string/_3"
-            app:layout_constraintBottom_toTopOf="@+id/button."
+            app:layout_constraintBottom_toTopOf="@+id/buttonDot"
             app:layout_constraintEnd_toStartOf="@+id/buttonPlus" />
 
         <Button
@@ -171,10 +171,10 @@
             style="@style/CalculatorButtons"
             android:text="@string/_0"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button." />
+            app:layout_constraintEnd_toStartOf="@+id/buttonDot" />
 
         <Button
-            android:id="@+id/button."
+            android:id="@+id/buttonDot"
             style="@style/CalculatorButtons"
             android:text="@string/point"
             app:layout_constraintBottom_toBottomOf="parent"
