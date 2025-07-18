@@ -2,7 +2,7 @@
 <resources>
     <style name="CalculatorButtons" parent="CalculatorButtons.Base">
         <item name="layout_constraintDimensionRatio">1:1</item>
-        <item name="layout_constraintWidth_percent">0.25</item>
+        <item name="layout_constraintHeight_percent">0.20</item>
         <item name="android:textSize">48sp</item>
     </style>
 </resources>
