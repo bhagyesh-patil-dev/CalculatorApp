@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/_100"
-            android:textColor="@color/white"
+            android:textColor="@color/input_text"
             android:textSize="56sp" />
 
         <TextView

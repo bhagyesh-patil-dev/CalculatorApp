@@ -3,10 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="splash_bg">#232323</color>
-    <color name="calculator_bg">#FAFAFA</color>
+    <color name="calculator_bg">#232323</color>
     <color name="button_orange">#FF7601</color>
-    <color name="button_white">#161616</color>
-    <color name="button_bg_tint">#2C2C2C</color>
+    <color name="button_white">#FAFAFA</color>
+    <color name="button_bg_tint">#404040</color>
     <color name="ac_button_text">@color/button_orange</color>
-    <color name="input_text">#49454F</color>
+    <color name="input_text">#C9C3CF</color>
 </resources>
