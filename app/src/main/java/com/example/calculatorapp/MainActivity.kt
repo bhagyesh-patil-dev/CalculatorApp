@@ -145,6 +145,9 @@ class MainActivity : AppCompatActivity() {
         if (currentExpression.isNotEmpty()) {
             currentExpression.deleteCharAt(currentExpression.length - 1)
             textViewInput.text = currentExpression
+
+            val displayText = currentExpression.toString().replace('*', '×').replace('/', '÷')
+            textViewInput.text = displayText
         }
     }
 
