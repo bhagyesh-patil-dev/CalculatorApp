@@ -1,7 +1,10 @@
 package com.example.calculatorapp
 
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -68,29 +71,35 @@ class MainActivity : AppCompatActivity() {
         )
 
         for (id in numberButtons) {
-            findViewById<Button>(id).setOnClickListener {
+            val button = findViewById<Button>(id)
+            button.setOnClickListener {
                 val text = (it as Button).text.toString()
                 appendInput(text)
             }
+            buttonPressEffect(button)
         }
 
         val multiply = findViewById<Button>(R.id.buttonMultiply)
         multiply.setOnClickListener {
             appendInput("*")
         }
+        buttonPressEffect(multiply)
 
         val divide = findViewById<Button>(R.id.buttonDivide)
         divide.setOnClickListener {
             appendInput("/")
         }
+        buttonPressEffect(divide)
 
         buttonAllClear.setOnClickListener {
             onClearInput()
         }
+        buttonPressEffect(buttonAllClear)
 
         buttonBackspace.setOnClickListener {
             onBackspace()
         }
+        buttonPressEffect(buttonBackspace)
 
         buttonCalculate.setOnClickListener {
             val output = evaluateExpression(currentExpression.toString())
@@ -98,6 +107,7 @@ class MainActivity : AppCompatActivity() {
             resultExpression.append(output)
             textViewOutput.text = resultExpression.toString()
         }
+        buttonPressEffect(buttonCalculate)
     }
 
     private fun appendInput(text: String) {
@@ -159,5 +169,35 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             "Error"
         }
+    }
+}
+
+@SuppressLint("ClickableViewAccessibility")
+fun buttonPressEffect(button: Button) {
+    val animationDuration = 50L
+    val scaleDownX = ObjectAnimator.ofFloat(button, "scaleX", 0.9f)
+    val scaleDownY = ObjectAnimator.ofFloat(button, "scaleY", 0.9f)
+    val scaleUpX = ObjectAnimator.ofFloat(button, "scaleX", 1f)
+    val scaleUpY = ObjectAnimator.ofFloat(button, "scaleY", 1f)
+
+    scaleDownX.duration = animationDuration
+    scaleDownY.duration = animationDuration
+    scaleUpX.duration = animationDuration
+    scaleUpY.duration = animationDuration
+
+    val button: Button = button.findViewById(button.id)
+    button.setOnTouchListener { _, event ->
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                scaleDownX.start()
+                scaleDownY.start()
+            }
+
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                scaleUpX.start()
+                scaleUpY.start()
+            }
+        }
+        return@setOnTouchListener false
     }
 }
