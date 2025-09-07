@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CalculatorButtons.Base">
+    <style name="CalculatorButtonsBase">
         <item name="android:background">@drawable/btn_gray</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
@@ -13,7 +13,7 @@
         <item name="android:foreground">@drawable/ripple</item>
     </style>
 
-    <style name="CalculatorButtons" parent="CalculatorButtons.Base">
+    <style name="CalculatorButtons" parent="CalculatorButtonsBase">
         <item name="layout_constraintDimensionRatio">1:1</item>
         <item name="layout_constraintWidth_percent">0.25</item>
         <item name="android:textSize">24sp</item>
